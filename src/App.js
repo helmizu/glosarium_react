@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import Glosarium from './components/Glosarium';
+import GlosariumWrapper from './components/GlosariumWrapper';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Glosarium />
+        <GlosariumWrapper />
       </div>
     );
   }

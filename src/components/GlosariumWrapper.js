@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import Glosarium from './Glosarium/Glosarium';
 
-class Glosarium extends Component {
+class GlosariumWrapper extends Component {
   render() {
     return (
       <div className="glosarium">
         <Navbar />
+          <Glosarium />
         <Footer />
       </div>
     )
   }
 }
 
-export default Glosarium;
+export default GlosariumWrapper;
