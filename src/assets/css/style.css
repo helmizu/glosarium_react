@@ -1,0 +1,1043 @@
+@font-face {
+    font-family: "Helvetica";
+    src: url("../fonts/Helvetica.otf");
+}
+
+@font-face {
+    font-family: "Helvetica-Bold";
+    src: url("../fonts/Helvetica-Bold.ttf");
+}
+
+@font-face {
+    font-family: "Helvetica-Light";
+    src: url("../fonts/Helvetica-Light.otf");
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Helvetica', sans-serif;
+}
+
+b {
+    font-family: 'Helvetica-Bold', sans-serif;
+    font-weight: bold;
+}
+
+a {
+    margin: 0;
+    padding: 0;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+/*FONT*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    font-family: 'Helvetica', sans-serif;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+    margin: 0;
+}
+
+p {
+    font-size: 24px;
+    font-family: 'Helvetica-Light', sans-serif;
+    line-height: 28px;
+}
+
+.container-padding {
+    padding-right: 8.33333333% !important;
+    padding-left: 8.33333333% !important;
+}
+
+h1,
+.h1 {
+    font-size: 36px;
+}
+
+h2,
+.h2 {
+    font-size: 30px;
+}
+
+h3,
+.h3 {
+    font-size: 24px;
+}
+
+h4,
+.h4 {
+    font-size: 18px;
+}
+
+h5,
+.h5 {
+    font-size: 14px;
+}
+
+h6,
+.h6 {
+    font-size: 12px;
+}
+
+p {
+    margin: 0 0 10px;
+}
+
+/*/FONT*/
+
+/*Jarak*/
+
+.top-8 {
+    position: relative;
+    margin-top: 8px;
+}
+
+.top-10 {
+    position: relative;
+    margin-top: 10px;
+}
+
+.top-16 {
+    position: relative;
+    margin-top: 16px;
+}
+
+.top-18 {
+    position: relative;
+    margin-top: 18px;
+}
+
+.top-19 {
+    position: relative;
+    margin-top: 19px;
+}
+
+.top-20 {
+    position: relative;
+    margin-top: 20px;
+}
+
+.top-22 {
+    position: relative;
+    margin-top: 22px;
+}
+
+.top-24 {
+    position: relative;
+    margin-top: 24px;
+}
+
+.top-30 {
+    position: relative;
+    margin-top: 30px;
+}
+
+.top-32 {
+    position: relative;
+    margin-top: 32px;
+}
+
+.top-36 {
+    position: relative;
+    margin-top: 36px;
+}
+
+.top-40 {
+    position: relative;
+    margin-top: 40px;
+}
+
+.top-48 {
+    position: relative;
+    margin-top: 48px;
+}
+
+.top-45 {
+    position: relative;
+    margin-top: 45px;
+}
+
+.top-48 {
+    position: relative;
+    margin-top: 48px;
+}
+
+.top-50 {
+    position: relative;
+    margin-top: 50px;
+}
+
+.top-56 {
+    position: relative;
+    margin-top: 56px;
+}
+
+.top-60 {
+    position: relative;
+    margin-top: 60px;
+}
+
+.top-64 {
+    position: relative;
+    margin-top: 64px;
+}
+
+.top-70 {
+    position: relative;
+    margin-top: 70px;
+}
+
+.top-72 {
+    position: relative;
+    margin-top: 72px;
+}
+
+.top-80 {
+    position: relative;
+    margin-top: 80px;
+}
+
+.top-85 {
+    position: relative;
+    margin-top: 85px;
+}
+
+.top-88 {
+    position: relative;
+    margin-top: 88px;
+}
+
+.top-90 {
+    position: relative;
+    margin-top: 90px;
+}
+
+.top-96 {
+    position: relative;
+    margin-top: 96px;
+}
+
+.top-100 {
+    position: relative;
+    margin-top: 100px;
+}
+
+.top-112 {
+    position: relative;
+    margin-top: 112px;
+}
+
+.top-184 {
+    position: relative;
+    margin-top: 184px;
+}
+
+.top-300 {
+    position: relative;
+    margin-top: 300px;
+}
+
+.bottom-8 {
+    position: relative;
+    margin-bottom: 8px;
+}
+
+.bottom-10 {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.bottom-16 {
+    position: relative;
+    margin-bottom: 16px;
+}
+
+.bottom-18 {
+    position: relative;
+    margin-bottom: 18px;
+}
+
+.bottom-19 {
+    position: relative;
+    margin-bottom: 19px;
+}
+
+.bottom-20 {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.bottom-22 {
+    position: relative;
+    margin-bottom: 22px;
+}
+
+.bottom-24 {
+    position: relative;
+    margin-bottom: 24px;
+}
+
+.bottom-30 {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.bottom-32 {
+    position: relative;
+    margin-bottom: 32px;
+}
+
+.bottom-40 {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.bottom-45 {
+    position: relative;
+    margin-bottom: 45px;
+}
+
+.bottom-48 {
+    position: relative;
+    margin-bottom: 48px;
+}
+
+.bottom-50 {
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.bottom-56 {
+    position: relative;
+    margin-bottom: 56px;
+}
+
+.bottom-60 {
+    position: relative;
+    margin-bottom: 60px;
+}
+
+.bottom-64 {
+    position: relative;
+    margin-bottom: 64px;
+}
+
+.bottom-70 {
+    position: relative;
+    margin-bottom: 70px;
+}
+
+.bottom-72 {
+    position: relative;
+    margin-bottom: 72px;
+}
+
+.bottom-80 {
+    position: relative;
+    margin-bottom: 80px;
+}
+
+.bottom-85 {
+    position: relative;
+    margin-bottom: 85px;
+}
+
+.bottom-88 {
+    position: relative;
+    margin-bottom: 88px;
+}
+
+.bottom-90 {
+    position: relative;
+    margin-bottom: 90px;
+}
+
+.bottom-96 {
+    position: relative;
+    margin-bottom: 96px;
+}
+
+.bottom-100 {
+    position: relative;
+    margin-bottom: 100px;
+}
+
+.bottom-112 {
+    position: relative;
+    margin-bottom: 112px;
+}
+
+.left-8 {
+    position: relative;
+    margin-left: 8px;
+}
+
+.left-16 {
+    position: relative;
+    margin-left: 16px;
+}
+
+.left-32 {
+    position: relative;
+    margin-left: 32px;
+}
+
+.left-40 {
+    position: relative;
+    margin-left: 40px;
+}
+
+.left-48 {
+    position: relative;
+    margin-left: 48px;
+}
+
+.left-56 {
+    position: relative;
+    margin-left: 56px;
+}
+
+.left-64 {
+    position: relative;
+    margin-left: 64px;
+}
+
+.left-72 {
+    position: relative;
+    margin-left: 72px;
+}
+
+.left-80 {
+    position: relative;
+    margin-left: 80px;
+}
+
+.left-88 {
+    position: relative;
+    margin-left: 88px;
+}
+
+.left-96 {
+    position: relative;
+    margin-left: 96px;
+}
+
+.left-112 {
+    position: relative;
+    margin-left: 112px;
+}
+
+/*/Jarak*/
+
+.align-left {
+    text-align: left;
+}
+
+/*COLOR*/
+
+.color-white {
+    color: #fff;
+}
+
+.color-orange {
+    color: #F47E00;
+}
+
+.color-black {
+    color: #3D3F41;
+}
+
+/*/.COLOR*/
+
+/*Button */
+
+.btn {
+    padding: 19px 47px;
+    font-family: 'Helvetica-Bold', sans-serif;
+    text-transform: uppercase;
+    font-size: 18px;
+    border-radius: 30px;
+    line-height: 18px;
+}
+
+.btn-small {
+    padding: 13px 30px;
+}
+
+.btn-bg-orange {
+    background-color: #F47E00;
+    color: #fff;
+}
+
+.btn-bg-orange:hover {
+    background-color: #ff9c33;
+    color: #fff;
+}
+
+.btn-bg-blue {
+    background-color: #1E3A56;
+    color: #fff;
+}
+
+.btn-bg-blue:hover {
+    background-color: #284c71;
+    color: #fff;
+}
+
+.btn-border-orange {
+    border: 1px solid #F47E00;
+    color: #F47E00;
+}
+
+.btn-border-orange:hover {
+    border: 1px solid #F47E00;
+    color: #F47E00;
+    background-color: hsla(31, 100%, 60%, 0.1);
+    background-color: #ff9c331a;
+    background-color: rgba(255, 156, 51, 0.1);
+}
+
+.btn-border-gray {
+    border: 1px solid #D9E9FB;
+    color: #3D3F41;
+}
+
+.btn-border-gray:hover {
+    border: 1px solid #D9E9FB;
+    color: #3D3F41;
+    background-color: #D9E9FB;
+}
+
+.bg-white {
+    background-color: #fff;
+}
+
+.bg-white:hover {
+    background-color: #f7f7f7;
+}
+
+.button {
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid transparent;
+}
+
+.btn-border-oren {
+    width: 109px;
+    border: 1px solid #F47E00;
+    color: #F47E00 !important;
+    margin-right: 24px;
+}
+
+.btn-oren {
+    width: 109px;
+    background-color: #F47E00;
+    color: white !important;
+}
+
+.btn-ungu {
+    background-color: #1E3A56;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.btn-ungu:hover,
+.btn-hijau:hover {
+    color: white;
+}
+
+.btn-hijau {
+    background-color: #44C6A4;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.btn-oren:hover {
+    background-color: #F47E00 !important;
+    color: white !important;
+}
+
+.bg-grey {
+    background-color: #E9E9F1;
+    padding-top: 43px;
+    padding-bottom: 43px;
+}
+
+/* <- Button */
+
+.navbar {
+    margin-bottom: 0;
+    box-shadow: 0px 4px 20px 0px #e3e3e3;
+}
+
+.nav-edit {
+    padding-top: 24px !important;
+    padding-bottom: 24px !important;
+    background-color: #fff;
+}
+
+.container-padding {
+    padding-right: 8.33333333% !important;
+    padding-left: 8.33333333% !important;
+}
+
+.navbar-brand-edit {
+    margin-top: -28px;
+    padding-top: 0;
+}
+
+.navbar-right li a {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+
+.navbar li a {
+    font-size: 18px;
+}
+
+/*Footer*/
+
+footer {
+    position: relative;
+    width: 100%;
+    min-height: 516px;
+    background-color: #1E3A56;
+    padding-top: 103px;
+}
+
+footer:before {
+    position: absolute;
+    content: "";
+    background: url(../img/Footer.svg) no-repeat;
+    width: 100%;
+    height: 90%;
+}
+
+footer ul {
+    margin: 0;
+    padding: 0
+}
+
+footer ul li {
+    display: block;
+    margin-top: 30px;
+}
+
+footer ul li a {
+    font-family: 'Helvetica-Light', sans-serif;
+    font-size: 18px;
+    text-decoration: none;
+    color: #fff;
+}
+
+footer ul li a:hover {
+    color: #fff;
+}
+
+.sosmed {
+    margin-top: 33px;
+}
+
+.copyright {
+    position: relative;
+    width: 100%;
+    min-height: 62px;
+    background-color: #35506C;
+    padding: 22px 0px;
+}
+
+.logo {
+    float: left;
+}
+
+.copyright .text {
+    position: relative;
+    font-family: 'Helvetica-Light', sans-serif;
+    font-size: 18px;
+    color: #fff;
+    display: block;
+    float: left;
+}
+
+.right {
+    position: relative;
+    float: right !important;
+    right: 0;
+}
+
+.footer-text {
+    margin-left: 36px;
+}
+
+/*Footer*/
+
+/* Glosarium */
+
+#glosarium {
+    padding-top: 52px;
+    padding-bottom: 52px;
+    position: relative;
+}
+
+.clear {
+    clear: both;
+}
+
+.row-custom {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.side-nav {
+    width: 215px;
+    min-height: 100%;
+    position: relative;
+    background-color: transparent;
+}
+
+.top-nav {
+    width: 100%;
+    height: 54px;
+    background-color: #284c71;
+}
+
+.top-nav h2 {
+    line-height: 54px;
+    font-size: 14px;
+    color: white;
+    text-align: center;
+}
+
+.content-nav {
+    background-color: #E5E5E5;
+    padding: 28px;
+    min-height: 100%;
+    width: 100%;
+}
+
+.content-nav ul {
+    list-style-image: url('../img/Polygon.svg')
+}
+
+.content-nav ul .active {
+    list-style-image: url('../img/Polygon_active_down.svg')
+}
+
+.content-nav ul.dropdown-ul {
+    padding-left: 21px;
+    list-style-image: url('../img/Polygon_active_right.svg')
+}
+
+.content-nav ul li {
+    padding-bottom: 16px;
+    padding-left: 10px;
+}
+
+.glosarium-wrapper {
+    padding-left: 32px;
+    min-height: 100%;
+}
+
+.search {
+    position: relative;
+}
+
+.search input {
+    border-radius: 20px;
+    border: 1px solid #E5E5E5;
+    width: 100%;
+    padding: 16px 18px 16px 28px;
+    margin: 0;
+}
+
+.img-search-input {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    width: 24px;
+    height: 24px;
+}
+
+.search input:focus {
+    outline: none;
+}
+
+.search input::placeholder {
+    color: #e5e5e5;
+    opacity: 1;
+    /* Firefox */
+}
+
+.search input:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #e5e5e5;
+}
+
+.search input::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: #e5e5e5;
+}
+
+.glosarium-title h2 {
+    font-size: 24px;
+}
+
+.txt-grey {
+    color: #e5e5e5;
+}
+
+.glosarium-title::after {
+    display: block;
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: #e5e5e5;
+    margin-top: 18px;
+}
+
+.glosarium-content {
+    padding-top: 44px;
+}
+
+.glosarium-content ol li,
+.glosarium-content ul li {
+    font-size: 24px;
+    padding-bottom: 28px;
+}
+
+.glosarium-content ul li {
+    list-style: none;
+}
+
+.glosarium-content .content {
+    text-align: center;
+}
+
+.glosarium-content .content h3 {
+    font-size: 24px;
+    padding-bottom: 32px;
+    font-family: 'Helvetica';
+}
+
+.glosarium-content .content p {
+    font-size: 18px;
+    font-family: 'Helvetica'
+}
+
+.content img {
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 42px;
+}
+
+.content label {
+    font-size: 14px;
+    font-weight: normal;
+    margin-top: 16px;
+    margin-bottom: 24px;
+}
+
+/* Glosarium */
+
+/* Responsive */
+
+@media (min-width: 320px) and (max-width: 424px) {
+    .top-36-sm {
+        margin-top: 36px;
+    }
+    .footer-text {
+        padding-right: 50px;
+    }
+    .float-left-sm {
+        float: left !important;
+    }
+    .box-daftar {
+        width: 94%;
+        padding-bottom: 60px;
+    }
+    .btn-masuk {
+        margin-top: 24px;
+    }
+    .bottom ul {
+        padding-left: 0;
+    }
+    .bottom ul li {
+        list-style: none;
+        text-align: center;
+        padding: 4px;
+    }
+    .navbar li a {
+        text-align: center;
+        font-size: 14px;
+    }
+    .btn-oren,
+    .btn-border-oren {
+        width: 100%;
+        margin: 5 0px;
+    }
+    /* Footer */
+    footer {
+        padding-bottom: 20px;
+        padding-top: 48px;
+    }
+    footer ul li {
+        display: block;
+        margin-top: 16px;
+    }
+    footer .col-md-3 {
+        margin-top: 40px;
+    }
+    .sosmed {
+        margin-top: 16px;
+    }
+    .sosmed .logo {
+        float: left;
+        margin-right: 16px;
+        margin-top: 0;
+    }
+    footer:before {
+        top: 44%;
+        height: 70%;
+    }
+    .copyright .text {
+        font-size: 14px;
+    }
+    .copyright .float-right {
+        margin-top: 8px;
+    }
+    .footer-text {
+        margin-left: 0;
+        margin-right: 32px;
+    }
+    /* Footer */
+}
+
+@media (min-width: 425px) and (max-width: 767px) {
+    .btn-masuk {
+        margin-top: 24px;
+    }
+    .bottom ul {
+        padding-left: 0;
+    }
+    .bottom ul li {
+        list-style: none;
+        text-align: center;
+        padding: 4px;
+    }
+    .navbar li a {
+        text-align: center;
+        font-size: 14px;
+    }
+    .button {
+        width: 100%;
+        margin-bottom: 8px;
+    }
+    /* Footer */
+    footer {
+        padding-bottom: 20px;
+        padding-top: 48px;
+    }
+    footer ul li {
+        display: block;
+        margin-top: 16px;
+    }
+    footer .col-md-3 {
+        margin-top: 40px;
+    }
+    .sosmed {
+        margin-top: 16px;
+    }
+    .sosmed .logo {
+        float: left;
+        margin-right: 16px;
+        margin-top: 0;
+    }
+    footer:before {
+        top: 44%;
+        height: 70%;
+    }
+    .footer-text {
+        margin-left: 0;
+        margin-right: 64px;
+        margin-top: 10px;
+    }
+    .copyright .text {
+        margin-bottom: 8px;
+    }
+    /* Footer */
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .navbar li a {
+        text-align: center;
+        font-size: 14px;
+    }
+    .navbar-right {
+        float: right !important;
+        margin-right: -40px;
+    }
+    /* Footer */
+    footer {
+        padding-bottom: 20px;
+        padding-top: 48px;
+    }
+    footer ul li {
+        display: block;
+        margin-top: 16px;
+    }
+    footer .col-md-3 {
+        margin-top: 40px;
+    }
+    .sosmed {
+        margin-top: 16px;
+    }
+    .sosmed .logo {
+        float: left;
+        margin-right: 16px;
+        margin-top: 0;
+    }
+    footer:before {
+        top: 44%;
+        height: 70%;
+    }
+    .copyright .text {
+        font-size: 12px;
+    }
+    /* Footer */
+}
+
+@media (min-width: 1024px) and (max-width: 1365px) {
+    .copyright .text {
+        font-size: 16px;
+    }
+    .left-25 {
+        margin-left: 25px;
+    }
+}
