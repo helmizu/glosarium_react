@@ -21,18 +21,17 @@ export class SideBar extends Component {
         setLabel: PropTypes.func.isRequired,
     }
 
-    componentDidMount = () => {
+    componentDidUpdate = () => {
         this.props.getData(this.props.label)
     }
 
     onLabelClicked = (label) => {
         this.props.setLabel(label)
-        alert('Change')
     }
 
     render() {
         const { nama, label } = this.state
-
+        
         return (
             <div>
                 <div class="col-md-3 col-xs-12">
@@ -52,7 +51,7 @@ export class SideBar extends Component {
                                         ) : null
                                     }
                                 </ul>
-                                <li className="active">CSS</li>
+                                <li onClick={() => this.onLabelClicked('CSS')} className="active">CSS</li>
                                 <ul className="dropdown-ul">
                                     {
                                         this.props.label == 'CSS' ?
