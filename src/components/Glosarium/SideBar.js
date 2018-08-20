@@ -1,7 +1,38 @@
 import React, { Component } from 'react';
+import { getAllData, getData, setLabel } from '../../actions/glosariumAction'
+import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 
-export default class SideBar extends Component {
+export class SideBar extends Component {
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            nama: "",
+            label: ""
+        }
+        this.onLabelClicked = this.onLabelClicked.bind(this)
+    }
+
+    static propTypes = {
+        data: PropTypes.array.isRequired,
+        getData: PropTypes.func.isRequired,
+        getAllData: PropTypes.func.isRequired,
+        setLabel: PropTypes.func.isRequired,
+    }
+
+    componentDidMount = () => {
+        this.props.getData(this.props.label)
+    }
+
+    onLabelClicked = (label) => {
+        this.props.setLabel(label)
+        alert('Change')
+    }
+
     render() {
+        const { nama, label } = this.state
+
         return (
             <div>
                 <div class="col-md-3 col-xs-12">
@@ -11,34 +42,54 @@ export default class SideBar extends Component {
                         </div>
                         <div class="content-nav">
                             <ul>
-                                <a href="">
-                                    <li>HTML</li>
-                                </a>
-                                <a href="">
-                                    <li class="active">CSS</li>
-                                </a>
-                                <ul class="dropdown-ul">
-                                    <li>Padding</li>
-                                    <li>Margin</li>
-                                    <li>Direktori</li>
-                                    <li>Kode Hexa</li>
-                                    <li>Hover</li>
+                                <li onClick={() => this.onLabelClicked('HTML')} className="active">HTML</li>
+                                <ul className="dropdown-ul">
+                                    {
+                                        this.props.label == 'HTML' ?
+                                        this.props.data.map(dt => (
+                                            <li>{dt.nama}</li>
+                                        )
+                                        ) : null
+                                    }
                                 </ul>
-                                <a href="">
-                                    <li>JavaScript</li>
-                                </a>
-                                <a href="">
-                                    <li>PHP</li>
-                                </a>
-                                <a href="">
-                                    <li>MySQL</li>
-                                </a>
-                                <a href="">
-                                    <li>NodeJs</li>
-                                </a>
-                                <a href="">
-                                    <li>MongoDB</li>
-                                </a>
+                                <li className="active">CSS</li>
+                                <ul className="dropdown-ul">
+                                    {
+                                        this.props.label == 'CSS' ?
+                                        this.props.data.map(dt => (
+                                            <li>{dt.nama}</li>
+                                        )
+                                        ) : null
+                                    }
+                                </ul>
+
+                                <li className="active">javaScript</li>
+                                <ul className="dropdown-ul">
+                                    {
+                                        this.props.label == 'JS' ?
+                                        this.props.data.map(dt => (
+                                            <li>{dt.nama}</li>
+                                        )
+                                        ) : null
+                                    }
+                                </ul>
+
+                                <li className="active">PHP</li>
+                                <ul className="dropdown-ul">
+                                    {
+                                        this.props.label == 'PHP' ?
+                                        this.props.data.map(dt => (
+                                            <li>{dt.nama}</li>
+                                        )
+                                        ) : null
+                                    }
+                                </ul>
+
+                                <li>MySQL</li>
+
+                                <li>NodeJs</li>
+
+                                <li>MongoDB</li>
                             </ul>
                         </div>
                     </div>
@@ -47,3 +98,17 @@ export default class SideBar extends Component {
         )
     }
 }
+
+const mapStateToProps = (state) => ({
+    data: state.glosarium.data,
+    label: state.glosarium.label
+})
+
+const mapDispatchToProps =
+{
+    getAllData,
+    getData,
+    setLabel
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SideBar)
