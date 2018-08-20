@@ -21,8 +21,10 @@ export class SideBar extends Component {
         setLabel: PropTypes.func.isRequired,
     }
 
-    componentDidUpdate = () => {
-        this.props.getData(this.props.label)
+    componentDidUpdate = (prevProps, prevState) => {
+        if (prevProps.label !== this.props.label) {
+            this.props.getData(this.props.label)
+        }
     }
 
     onLabelClicked = (label) => {
@@ -31,7 +33,7 @@ export class SideBar extends Component {
 
     render() {
         const { nama, label } = this.state
-        
+
         return (
             <div>
                 <div class="col-md-3 col-xs-12">
@@ -45,20 +47,20 @@ export class SideBar extends Component {
                                 <ul className="dropdown-ul">
                                     {
                                         this.props.label == 'HTML' ?
-                                        this.props.data.map(dt => (
-                                            <li>{dt.nama}</li>
-                                        )
-                                        ) : null
+                                            this.props.data.map(dt => (
+                                                <li>{dt.nama}</li>
+                                            )
+                                            ) : null
                                     }
                                 </ul>
                                 <li onClick={() => this.onLabelClicked('CSS')} className="active">CSS</li>
                                 <ul className="dropdown-ul">
                                     {
                                         this.props.label == 'CSS' ?
-                                        this.props.data.map(dt => (
-                                            <li>{dt.nama}</li>
-                                        )
-                                        ) : null
+                                            this.props.data.map(dt => (
+                                                <li>{dt.nama}</li>
+                                            )
+                                            ) : null
                                     }
                                 </ul>
 
@@ -66,10 +68,10 @@ export class SideBar extends Component {
                                 <ul className="dropdown-ul">
                                     {
                                         this.props.label == 'JS' ?
-                                        this.props.data.map(dt => (
-                                            <li>{dt.nama}</li>
-                                        )
-                                        ) : null
+                                            this.props.data.map(dt => (
+                                                <li>{dt.nama}</li>
+                                            )
+                                            ) : null
                                     }
                                 </ul>
 
@@ -77,10 +79,10 @@ export class SideBar extends Component {
                                 <ul className="dropdown-ul">
                                     {
                                         this.props.label == 'PHP' ?
-                                        this.props.data.map(dt => (
-                                            <li>{dt.nama}</li>
-                                        )
-                                        ) : null
+                                            this.props.data.map(dt => (
+                                                <li>{dt.nama}</li>
+                                            )
+                                            ) : null
                                     }
                                 </ul>
 
