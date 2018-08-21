@@ -33,7 +33,6 @@ export class SideBar extends Component {
     // }
     handleClick = (e) => {
         e.target.className === '' ? e.target.className = 'active' : e.target.className = ''
-        
     }
 
     render() {
@@ -65,8 +64,9 @@ export class SideBar extends Component {
                                             className='' 
                                             key={label.info.uuid}>
                                             {label.name}
-                                                                    
-                                            <ChildSidebar value={label.name} />                                           
+                                                        
+                                            <ChildSidebar value={label.name} />
+                                                                                       
                                         </li>
                                     ))
                                 }
