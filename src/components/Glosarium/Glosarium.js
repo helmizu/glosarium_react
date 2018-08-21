@@ -8,13 +8,13 @@ class Glosarium extends Component {
     return (
       <div>
       <div id="glosarium">
-        <div class="container container-padding">
-            <div class="row">
+        <div className="container container-padding">
+            <div className="row">
                 
                 <SideBar />
 
-                <div class="col-md-9 col-xs-12">
-                    <div class="glosarium-wrapper">
+                <div className="col-md-9 col-xs-12">
+                    <div className="glosarium-wrapper">
                         
                         <Search />
                         
