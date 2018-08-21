@@ -751,7 +751,8 @@ footer ul li a:hover {
 }
 
 .content-nav ul.dropdown-ul {
-    padding-left: 21px;
+    padding-left: 14px;
+    padding-top: 16px;
     list-style-image: url('../img/Polygon_active_right.svg')
 }
 

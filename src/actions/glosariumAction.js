@@ -1,4 +1,4 @@
-import { GET_ALL_DATA, SET_LOADING, SET_LABEL, GET_DATA } from "../config/type";
+import { GET_ALL_DATA, SET_LOADING, SET_LABEL, GET_DATA, GET_COLLECTION } from "../config/type";
 import Axios from "axios";
 
 export const getAllData = (search = "") => dispatch => {
@@ -17,6 +17,16 @@ export const getData = (label) => dispatch => {
         dispatch({
             type: GET_DATA,
             payload: res.data
+        })
+    )
+}
+
+export const getCollection = () => dispatch => {
+    Axios.get(`http://localhost:7000/glosarium/collection`)
+    .then(res => 
+        dispatch({
+            type : GET_COLLECTION,
+            payload : res.data
         })
     )
 }

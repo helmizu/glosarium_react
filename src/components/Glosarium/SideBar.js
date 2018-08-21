@@ -1,34 +1,39 @@
 import React, { Component } from 'react';
-import { getAllData, getData, setLabel } from '../../actions/glosariumAction'
+import { getAllData, getCollection } from '../../actions/glosariumAction'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
+import ChildSidebar from './ChildSidebar'
 
 export class SideBar extends Component {
     constructor(props) {
         super(props)
 
-        this.state = {
-            nama: "",
-            label: ""
-        }
-        this.onLabelClicked = this.onLabelClicked.bind(this)
+        this.handleClick = this.handleClick.bind(this)
     }
 
     static propTypes = {
         data: PropTypes.array.isRequired,
-        getData: PropTypes.func.isRequired,
-        getAllData: PropTypes.func.isRequired,
-        setLabel: PropTypes.func.isRequired,
+
+        getCollection: PropTypes.func.isRequired,
     }
 
-    componentDidUpdate = (prevProps, prevState) => {
-        if (prevProps.label !== this.props.label) {
-            this.props.getData(this.props.label)
-        }
+    componentWillMount = () => {
+        this.props.getCollection()
+        this.props.getAllData()
     }
 
-    onLabelClicked = (label) => {
-        this.props.setLabel(label)
+    // componentDidUpdate = (prevProps, prevState) => {
+    //     if (prevProps.label !== this.props.label) {
+    //         this.props.getData(this.props.label)
+    //     }
+    // }
+
+    // onLabelClicked = (label) => {
+    //     this.props.setLabel(label)
+    // }
+    handleClick = (e) => {
+        e.target.className === '' ? e.target.className = 'active' : e.target.className = ''
+        
     }
 
     render() {
@@ -41,54 +46,31 @@ export class SideBar extends Component {
                         </div>
                         <div className="content-nav">
                             <ul>
+                                {/* 
                                 <li onClick={() => this.onLabelClicked('HTML')} className="active">HTML</li>
                                 <ul className="dropdown-ul">
-                                    {
+                                    
                                         this.props.label === 'HTML' ?
                                             this.props.data.map(dt => (
                                                 <li>{dt.nama}</li>
                                             )
                                             ) : null
-                                    }
+                                    
                                 </ul>
-                                <li onClick={() => this.onLabelClicked('CSS')} className="active">CSS</li>
-                                <ul className="dropdown-ul">
-                                    {
-                                        this.props.label === 'CSS' ?
-                                            this.props.data.map(dt => (
-                                                <li>{dt.nama}</li>
-                                            )
-                                            ) : null
-                                    }
-                                </ul>
+                                */}
 
-                                <li className="active">javaScript</li>
-                                <ul className="dropdown-ul">
-                                    {
-                                        this.props.label === 'JS' ?
-                                            this.props.data.map(dt => (
-                                                <li>{dt.nama}</li>
-                                            )
-                                            ) : null
-                                    }
-                                </ul>
+                                {
+                                    this.props.label.map(label => (
+                                        <li onClick={this.handleClick} 
+                                            className='' 
+                                            key={label.info.uuid}>
+                                            {label.name}
+                                                                    
+                                            <ChildSidebar value={label.name} />                                           
+                                        </li>
+                                    ))
+                                }
 
-                                <li className="active">PHP</li>
-                                <ul className="dropdown-ul">
-                                    {
-                                        this.props.label === 'PHP' ?
-                                            this.props.data.map(dt => (
-                                                <li>{dt.nama}</li>
-                                            )
-                                            ) : null
-                                    }
-                                </ul>
-
-                                <li>MySQL</li>
-
-                                <li>NodeJs</li>
-
-                                <li>MongoDB</li>
                             </ul>
                         </div>
                     </div>
@@ -106,8 +88,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps =
 {
     getAllData,
-    getData,
-    setLabel
+    getCollection
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(SideBar)
