@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { getData, getAllData } from '../../actions/glosariumAction'
+import { getData, getAllData, dataSelected } from '../../actions/glosariumAction'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
@@ -12,11 +12,19 @@ export class ChildSidebar extends Component {
             label : '',
             isOpen : true
         }
+        this.selectData = this.selectData.bind(this)
     }
 
     static propTypes = {
         data: PropTypes.array.isRequired,
+        dataSelected: PropTypes.array.isRequired,
         getData: PropTypes.func.isRequired,
+        dataSelected : PropTypes.func.isRequired
+    }
+
+    selectData = (data) => {
+        this.props.dataSelected(data)
+        console.log(data)
     }
     
     render() {
@@ -25,7 +33,7 @@ export class ChildSidebar extends Component {
                 {
                     this.props.data.map(dt => (
                         this.props.value === dt.label ?
-                        <li key={dt._id}>{dt.nama}</li>
+                        <li onClick={() => this.selectData(dt)} key={dt._id}>{dt.nama}</li>
                         : null
                     ))
                 }
@@ -36,12 +44,14 @@ export class ChildSidebar extends Component {
 
 const mapStateToProps = (state) => ({
     data: state.glosarium.data,
+    labelSelected : state.glosarium.labelSelected
 })
 
 const mapDispatchToProps =
 {
     getData,
-    getAllData
+    getAllData,
+    dataSelected
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ChildSidebar)

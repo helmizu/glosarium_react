@@ -1,4 +1,4 @@
-import { GET_ALL_DATA, SET_LOADING, SET_LABEL, GET_DATA, GET_COLLECTION } from "../config/type";
+import { GET_ALL_DATA, SET_LOADING, SET_LABEL, GET_DATA, GET_COLLECTION, DATA_SELECTED } from "../config/type";
 import Axios from "axios";
 
 export const getAllData = (search = "") => dispatch => {
@@ -39,5 +39,12 @@ export const setLabel = (label) => dispatch => {
     dispatch({
         type: SET_LABEL,
         payload: label
+    })
+}
+
+export const dataSelected = (data) => dispatch => {
+    dispatch({
+        type: DATA_SELECTED,
+        payload: data
     })
 }
