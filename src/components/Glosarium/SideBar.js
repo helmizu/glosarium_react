@@ -60,13 +60,13 @@ export class SideBar extends Component {
 
                                 {
                                     this.props.label.map(label => (
-                                        <li onClick={this.handleClick} 
-                                            className='' 
+                                        <li onClick={this.handleClick}
+                                            className=''
                                             key={label.info.uuid}>
                                             {label.name}
-                                                        
+
                                             <ChildSidebar value={label.name} />
-                                                                                       
+
                                         </li>
                                     ))
                                 }

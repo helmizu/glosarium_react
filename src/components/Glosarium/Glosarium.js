@@ -10,7 +10,7 @@ class Glosarium extends Component {
       <div id="glosarium">
         <div className="container container-padding">
             <div className="row">
-                
+
                 <SideBar />
 
                 <div className="col-md-9 col-xs-12 col-sm-9">

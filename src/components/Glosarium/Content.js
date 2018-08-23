@@ -19,6 +19,11 @@ export class Content extends Component {
                                     <span className="txt-grey">
                                     {this.props.labelSelected.label} /  &nbsp;{this.props.labelSelected.nama}
                                 </span>
+                                <span className="container-bar">
+                                <div class="bar1"></div>
+                                <div class="bar2"></div>
+                                <div class="bar3"></div>
+                                </span>
                             </h2>
                         </div>
                         <div className="glosarium-content" key={this.props.labelSelected._id}>

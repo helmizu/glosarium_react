@@ -5,7 +5,7 @@ const initialState = {
     report : '',
     loading : false,
     label : [],
-    labelSelected : []
+    labelSelected : [],
 }
 
 export default (state = initialState, action) => {
@@ -42,7 +42,7 @@ export default (state = initialState, action) => {
         return {
             ...state,
             labelSelected : action.payload
-        } 
+        }
         default:
         return state
     }
