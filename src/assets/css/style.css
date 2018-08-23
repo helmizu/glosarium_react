@@ -761,6 +761,10 @@ footer ul li a:hover {
     display: none;
 }
 
+.content-nav ul.dropdown-ul li.active{
+    list-style-image: url('../img/Polygon_active_right.svg');
+}
+
 .content-nav ul li {
     padding-bottom: 16px;
     padding-left: 10px;
@@ -1145,6 +1149,51 @@ footer ul li a:hover {
         font-size: 12px;
     }
     /* Footer */
+    /* Glosarium */
+    .side-nav {
+        width: 185px;
+        min-height: 100%;
+    }
+    .content-nav {
+        padding: 24px 16px 16px 16px;
+    }
+    .content-nav ul{
+        padding-left: 32px;
+    }
+    .content-nav ul li{
+        padding-bottom: 32px;
+    }
+    .content-nav ul li.active{
+        padding-bottom: 0;
+    }
+    .content-nav ul.dropdown-ul li.active, .content-nav ul.dropdown-ul li {
+        padding-bottom: 18px;
+    }
+    .dropdown-ul{
+        margin-bottom: 8px;
+    }
+    .glosarium-wrapper {
+        padding-left: 48px;
+    }
+    .glosarium-title h2 {
+        font-size: 18px;
+        margin-top: 42px;
+    }
+    .glosarium-content {
+        padding-top: 32px;
+    }
+    .glosarium-content .content p {
+        font-size: 16px;
+    }
+    .glosarium-content .content h3 {
+        font-size: 18px;
+        padding-bottom: 16px;
+        font-family: 'Helvetica';
+    }
+    .glosarium-content ol li, .glosarium-content ul li {
+        font-size: 18px;
+        padding-bottom: 28px;
+    }
 }
 
 @media (min-width: 1024px) and (max-width: 1365px) {
@@ -1153,5 +1202,48 @@ footer ul li a:hover {
     }
     .left-25 {
         margin-left: 25px;
+    }
+
+    /* glosarium Content */
+    /* Glosarium */
+    .content-nav {
+        padding: 24px 16px 16px 16px;
+    }
+    .content-nav ul{
+        padding-left: 32px;
+    }
+    .content-nav ul li{
+        padding-bottom: 32px;
+    }
+    .content-nav ul li.active{
+        padding-bottom: 0;
+    }
+    .content-nav ul.dropdown-ul li.active, .content-nav ul.dropdown-ul li {
+        padding-bottom: 18px;
+    }
+    .dropdown-ul{
+        margin-bottom: 8px;
+    }
+    .glosarium-wrapper {
+        padding-left: 48px;
+    }
+    .glosarium-title h2 {
+        font-size: 18px;
+        margin-top: 42px;
+    }
+    .glosarium-content {
+        padding-top: 32px;
+    }
+    .glosarium-content .content p {
+        font-size: 16px;
+    }
+    .glosarium-content .content h3 {
+        font-size: 18px;
+        padding-bottom: 16px;
+        font-family: 'Helvetica';
+    }
+    .glosarium-content ol li, .glosarium-content ul li {
+        font-size: 18px;
+        padding-bottom: 28px;
     }
 }
