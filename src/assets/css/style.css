@@ -750,7 +750,7 @@ footer ul li a:hover {
     list-style-image: url('../img/Polygon_active_down.svg')
 }
 
-.content-nav ul .active ul.dropdown-ul{
+.content-nav ul .active ul.dropdown-ul {
     display: block;
 }
 
@@ -758,12 +758,13 @@ footer ul li a:hover {
     padding-left: 14px;
     padding-top: 16px;
     list-style-image: url('../img/Polygon_active_right.svg');
-    display: none;   
+    display: none;
 }
 
 .content-nav ul li {
     padding-bottom: 16px;
     padding-left: 10px;
+    cursor: pointer;
 }
 
 .glosarium-wrapper {
@@ -861,7 +862,7 @@ footer ul li a:hover {
 .content img {
     text-align: center;
     margin: 0 auto;
-    margin-top: 42px;
+    width: 100%;
 }
 
 .content label {
@@ -944,6 +945,59 @@ footer ul li a:hover {
         margin-right: 32px;
     }
     /* Footer */
+    /* Content */
+    .top-nav h2 {
+        font-size: 16px;
+    }
+    .side-nav {
+        width: 100%;
+    }
+    .content-nav {
+        padding: 28px 28px 0px 28px;
+    }
+    .content-nav ul li {
+        padding-bottom: 16px;
+        font-size: 16px;
+    }
+    #glosarium {
+        padding-top: 32px;
+        padding-bottom: 32PX;
+    }
+    .glosarium-wrapper {
+        padding-left: 0;
+        padding-top: 24px;
+    }
+    .search input {
+        padding: 16px 18px 16px 18px;
+    }
+    .glosarium-title h2{
+        font-size: 16px;
+    }
+    input, button, select, textarea {
+        font-family: inherit;
+        font-size: 12px;
+        line-height: inherit;
+    }
+    .glosarium-content ol li, .glosarium-content ul li {
+        font-size: 18px;
+        padding-bottom: 28px;
+    }
+    .glosarium-content .content h3 {
+        font-size: 18px;
+        padding-bottom: 16px;
+    }
+    .glosarium-content {
+        padding-top: 24px;
+    }
+    .glosarium-content .content p {
+        font-size: 16px;
+    }
+    .content label {
+        font-size: 12px;
+        font-weight: normal;
+        margin-top: 16px;
+        margin-bottom: 8px;
+    }
 }
 
 @media (min-width: 425px) and (max-width: 767px) {
@@ -999,6 +1053,59 @@ footer ul li a:hover {
         margin-bottom: 8px;
     }
     /* Footer */
+    /* Content */
+    .top-nav h2 {
+        font-size: 16px;
+    }
+    .side-nav {
+        width: 100%;
+    }
+    .content-nav {
+        padding: 28px 28px 0px 28px;
+    }
+    .content-nav ul li {
+        padding-bottom: 16px;
+        font-size: 16px;
+    }
+    #glosarium {
+        padding-top: 32px;
+        padding-bottom: 32PX;
+    }
+    .glosarium-wrapper {
+        padding-left: 0;
+        padding-top: 24px;
+    }
+    .search input {
+        padding: 16px 18px 16px 18px;
+    }
+    .glosarium-title h2{
+        font-size: 16px;
+    }
+    input, button, select, textarea {
+        font-family: inherit;
+        font-size: 12px;
+        line-height: inherit;
+    }
+    .glosarium-content ol li, .glosarium-content ul li {
+        font-size: 18px;
+        padding-bottom: 28px;
+    }
+    .glosarium-content .content h3 {
+        font-size: 18px;
+        padding-bottom: 16px;
+    }
+    .glosarium-content {
+        padding-top: 24px;
+    }
+    .glosarium-content .content p {
+        font-size: 16px;
+    }
+    .content label {
+        font-size: 12px;
+        font-weight: normal;
+        margin-top: 16px;
+        margin-bottom: 8px;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
