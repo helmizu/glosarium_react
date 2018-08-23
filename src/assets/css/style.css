@@ -969,7 +969,7 @@ footer ul li a:hover {
     }
     .glosarium-wrapper {
         padding-left: 0;
-        padding-top: 24px;
+        padding-top: 0;
     }
     .search input {
         padding: 16px 18px 16px 18px;
@@ -1001,6 +1001,9 @@ footer ul li a:hover {
         font-weight: normal;
         margin-top: 16px;
         margin-bottom: 8px;
+    }
+    .search{
+        margin-bottom: 24px;
     }
 }
 
