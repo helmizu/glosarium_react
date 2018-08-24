@@ -4,7 +4,7 @@ import Search from './Search';
 import Content from './Content';
 import { isMobile } from 'react-device-detect';
 
-class Glosarium extends Component {
+export class Glosarium extends Component {
 
     contentLoad = () => {
         if (isMobile) {
@@ -16,7 +16,7 @@ class Glosarium extends Component {
 
                         <SideBar />
 
-                        <div className="col-md-9 col-xs-12 col-sm-9">
+                        <div className="col-md-9 col-xs-12 col-sm-9 col-lg-9">
                             <div className="glosarium-wrapper">
 
                                 <Content />
@@ -33,7 +33,7 @@ class Glosarium extends Component {
 
                         <SideBar />
 
-                        <div className="col-md-9 col-xs-12 col-sm-9">
+                        <div className="col-md-9 col-xs-12 col-sm-9 col-lg-9">
                             <div className="glosarium-wrapper">
 
                                 <Search />

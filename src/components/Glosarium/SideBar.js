@@ -38,7 +38,7 @@ export class SideBar extends Component {
     render() {
         return (
             <div>
-                <div className="col-md-3 col-xs-12 col-sm-3">
+                <div className="col-md-3 col-xs-12 col-sm-3 col-lg-3">
                     <div className="side-nav">
                         <div className="top-nav">
                             <h2>Dokumentasi Arkademy</h2>

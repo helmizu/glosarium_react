@@ -1,9 +1,9 @@
-import { GET_ALL_DATA, SET_LOADING, SET_LABEL, GET_DATA, GET_COLLECTION, DATA_SELECTED } from "../config/type";
+import { GET_ALL_DATA, SET_LOADING, SET_LABEL, GET_DATA, GET_COLLECTION, DATA_SELECTED, SEARCH_INPUT } from "../config/type";
 import Axios from "axios";
 
-export const getAllData = (search = "") => dispatch => {
+export const getAllData = () => dispatch => {
     dispatch(setLoading())
-    Axios.get(`http://localhost:7000/glosarium/all?search=${search}`).then(res =>
+    Axios.get(`http://localhost:7000/glosarium/all`).then(res =>
         dispatch({
             type: GET_ALL_DATA,
             payload: res.data
@@ -47,4 +47,13 @@ export const dataSelected = (data) => dispatch => {
         type: DATA_SELECTED,
         payload: data
     })
+}
+
+export const searchData = (search) => dispatch => {
+    Axios.get(`http://localhost:7000/glosarium/all?search=${search}`).then(res =>
+        dispatch({
+            type: SEARCH_INPUT,
+            payload: res.data
+        })
+    )
 }

@@ -1,4 +1,4 @@
-import { GET_DATA, SET_LOADING, GET_ALL_DATA, SET_LABEL, GET_COLLECTION, DATA_SELECTED } from "../config/type";
+import { GET_DATA, SET_LOADING, GET_ALL_DATA, SET_LABEL, GET_COLLECTION, DATA_SELECTED, SEARCH_INPUT } from "../config/type";
 
 const initialState = {
     data : [],
@@ -39,6 +39,11 @@ export default (state = initialState, action) => {
             label : action.payload
         } 
         case DATA_SELECTED:
+        return {
+            ...state,
+            labelSelected : action.payload
+        }
+        case SEARCH_INPUT:
         return {
             ...state,
             labelSelected : action.payload

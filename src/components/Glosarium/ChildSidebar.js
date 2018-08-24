@@ -17,7 +17,6 @@ export class ChildSidebar extends Component {
 
     static propTypes = {
         data: PropTypes.array.isRequired,
-        dataSelected: PropTypes.array.isRequired,
         getData: PropTypes.func.isRequired,
         dataSelected : PropTypes.func.isRequired
     }
@@ -43,8 +42,7 @@ export class ChildSidebar extends Component {
 }
 
 const mapStateToProps = (state) => ({
-    data: state.glosarium.data,
-    labelSelected : state.glosarium.labelSelected
+    data: state.glosarium.data
 })
 
 const mapDispatchToProps =
