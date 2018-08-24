@@ -41,6 +41,15 @@ class Search extends Component {
         });
     };
 
+    onKeyDown = (e) => {
+        if (e.keyCode === 13) { // Enter
+            // Stop it here
+            e.preventDefault();
+            e.stopPropagation();
+            this.iconOnclick(this.state.value)
+        }
+    }
+
     // Autosuggest will call this function every time you need to clear suggestions.
     onSuggestionsClearRequested = () => {
         this.setState({
@@ -69,13 +78,13 @@ class Search extends Component {
         const inputProps = {
             placeholder: 'Type a programming language',
             value,
-            onChange: this.onChange
+            onChange: this.onChange,
+            onKeyDown: this.onKeyDown
         };
         return (
             <div>
                 <div className="search">                   
                     <Autosuggest
-                        onSubmit={this.iconOnclick(value)}
                         suggestions={suggestions}
                         onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
                         onSuggestionsClearRequested={this.onSuggestionsClearRequested}
