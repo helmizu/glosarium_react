@@ -7,7 +7,7 @@ import SearchList from './SearchList'
 class Search extends Component {
     constructor(props) {
         super(props)
-
+        
         this.state = {
             value: '',
             suggestions: [],
@@ -21,24 +21,24 @@ class Search extends Component {
     getSuggestions = value => {
         const inputValue = value.trim().toLowerCase();
         const inputLength = inputValue.length;
-
+        
         return inputLength === 0 ? [] : this.props.data.filter(lang =>
             lang.nama.toLowerCase().slice(0, inputLength) === inputValue
         );
     };
-
+    
     // When suggestion is clicked, Autosuggest needs to populate the input
     // based on the clicked suggestion. Teach Autosuggest how to calculate the
     // input value for every given suggestion.
     getSuggestionValue = suggestion => suggestion.nama;
-
+    
     // Use your imagination to render suggestions.
     renderSuggestion = suggestion => (
         <div>
-            {suggestion.nama}
+        {suggestion.nama}
         </div>
     );
-
+    
     onChange = (event, { newValue }) => {
         this.setState({
             value: newValue
@@ -49,7 +49,7 @@ class Search extends Component {
             this.props.searchList(false)
         }
     };
-
+    
     onKeyDown = (e) => {
         if (e.keyCode === 13) { // Enter
             // Stop it here
@@ -58,24 +58,24 @@ class Search extends Component {
             this.iconOnclick(this.state.value)
         }
     }
-
+    
     onFocus = () => {
         this.setState({isFocus : !this.state.isFocus})
     }
-
+    
     onBlur = () => {
         setTimeout(() => {
             this.setState({isFocus : !this.state.isFocus})
-          }, 600);
+        }, 600);
     }
-
+    
     // Autosuggest will call this function every time you need to clear suggestions.
     onSuggestionsClearRequested = () => {
         this.setState({
             suggestions: []
         });
     };
-
+    
     // Autosuggest will call this function every time you need to update suggestions.
     // You already implemented this logic above, so just use it.
     onSuggestionsFetchRequested = ({ value }) => {
@@ -83,7 +83,7 @@ class Search extends Component {
             suggestions: this.getSuggestions(value)
         });
     };
-
+    
     iconOnclick = (dataInput) => {
         this.props.searchData(dataInput)
         // if(dataInput.length > 0){
@@ -92,10 +92,16 @@ class Search extends Component {
         //     this.props.searchList(false)
         // }
     }
-
+    
+    componentDidUpdate = (prevProps, prevState) => {
+        if (prevProps.labelSelected !== this.props.labelSelected) {
+            this.props.searchList(false)
+        }
+    }
+    
     render() {
         const { value, suggestions } = this.state;
-
+        
         // Autosuggest will pass through all these props to the input.
         const inputProps = {
             placeholder: 'Type a programming language',
@@ -107,18 +113,18 @@ class Search extends Component {
         };
         return (
             <div>
-                <div className="search">
-                    <Autosuggest
-                        suggestions={suggestions}
-                        onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
-                        onSuggestionsClearRequested={this.onSuggestionsClearRequested}
-                        getSuggestionValue={this.getSuggestionValue}
-                        renderSuggestion={this.renderSuggestion}
-                        inputProps={inputProps}
-                    />
-                    <img onClick={() => this.iconOnclick(value)} className="img-search-input" src={require("../../assets/img/search-2.svg")} alt="search" />
-                    <SearchList isFocus={this.state.isFocus} />
-                </div>
+            <div className="search">
+            <Autosuggest
+            suggestions={suggestions}
+            onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
+            onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+            getSuggestionValue={this.getSuggestionValue}
+            renderSuggestion={this.renderSuggestion}
+            inputProps={inputProps}
+            />
+            <img onClick={() => this.iconOnclick(value)} className="img-search-input" src={require("../../assets/img/search-2.svg")} alt="search" />
+            <SearchList isFocus={this.state.isFocus} />
+            </div>
             </div>
         )
     }
