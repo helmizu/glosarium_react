@@ -823,7 +823,7 @@ footer ul li a:hover {
 }
 
 .txt-grey {
-    color: #e5e5e5;
+    color: #949494;
 }
 
 .glosarium-title::after {
@@ -970,7 +970,7 @@ footer ul li a:hover {
 }
 
 .tag{
-    background-color: #477db4;
+    background-color: hsla(210, 48%, 43%, 1);
     color: #fff;
     padding: 8px;
     border-radius: 4px;
