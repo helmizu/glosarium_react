@@ -23,7 +23,6 @@ export class ChildSidebar extends Component {
 
     selectData = (data) => {
         this.props.dataSelected(data)
-        console.log(data)
     }
     
     render() {
