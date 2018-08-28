@@ -85,7 +85,7 @@ export class Content extends Component {
                                             <p className="align-left">{
                                                 this.props.labelSelected.tags ? this.props.labelSelected.tags.split(',').map(tag => <span className="tag">{tag}</span>) :
                                                 ""
-                                                }</p>
+                                                }<span className="tag">Tags</span></p>
                                         </div>
                                     </li>
                                 </ul>

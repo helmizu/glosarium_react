@@ -969,6 +969,14 @@ footer ul li a:hover {
     display: none;
 }
 
+.tag{
+    background-color: #477db4;
+    color: #fff;
+    padding: 8px;
+    border-radius: 4px;
+    margin-right: 4px;
+}
+
 
 /* Glosarium */
 
