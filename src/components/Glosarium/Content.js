@@ -67,7 +67,7 @@ export class Content extends Component {
                                     <li>
                                         <div className="content">
                                             <h3 className="align-left">Ilustrasi</h3>
-                                            <img src={this.props.labelSelected.ilustrasi} alt="" />
+                                            <img src={this.props.labelSelected.ilustrasi ? this.props.labelSelected.ilustrasi : require("../../assets/img/Rectangle 4.svg")} alt="" />
                                             <label>Gambar CSS 1.1 Ilustrasi Padding</label>
                                         </div>
                                     </li>
@@ -83,7 +83,7 @@ export class Content extends Component {
                                         <div className="content">
                                             <h3 className="align-left">TAGS</h3>
                                             <p className="align-left">{
-                                                this.props.labelSelected.tags ? this.props.labelSelected.tags.split(',').map(tag => <span className="">{tag}</span>) :
+                                                this.props.labelSelected.tags ? this.props.labelSelected.tags.split(',').map(tag => <span className="tag">{tag}</span>) :
                                                 ""
                                                 }</p>
                                         </div>
