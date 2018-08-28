@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Autosuggest from 'react-autosuggest'
-import {searchData} from '../../actions/glosariumAction'
+import { searchList, dataSelected, searchData } from '../../actions/glosariumAction'
+import SearchList from './SearchList'
 
 class Search extends Component {
     constructor(props) {
@@ -9,9 +10,12 @@ class Search extends Component {
 
         this.state = {
             value: '',
-            suggestions: []
+            suggestions: [],
+            isFocus: false
         }
         this.iconOnclick = this.iconOnclick.bind(this)
+        this.onFocus = this.onFocus.bind(this)
+        this.onBlur = this.onBlur.bind(this)
     }
     // Teach Autosuggest how to calculate suggestions for any given input value.
     getSuggestions = value => {
@@ -39,6 +43,11 @@ class Search extends Component {
         this.setState({
             value: newValue
         });
+        if (newValue.length > 0) {
+            this.props.searchList(newValue)
+        } else if (newValue.length === 0) {
+            this.props.searchList(false)
+        }
     };
 
     onKeyDown = (e) => {
@@ -48,6 +57,16 @@ class Search extends Component {
             e.stopPropagation();
             this.iconOnclick(this.state.value)
         }
+    }
+
+    onFocus = () => {
+        this.setState({isFocus : !this.state.isFocus})
+    }
+
+    onBlur = () => {
+        setTimeout(() => {
+            this.setState({isFocus : !this.state.isFocus})
+          }, 600);
     }
 
     // Autosuggest will call this function every time you need to clear suggestions.
@@ -67,8 +86,11 @@ class Search extends Component {
 
     iconOnclick = (dataInput) => {
         this.props.searchData(dataInput)
-        console.log(dataInput)
-        console.log(this.props.labelSelected)
+        // if(dataInput.length > 0){
+        //     this.props.searchList(dataInput)
+        // }else if(dataInput.length === 0){
+        //     this.props.searchList(false)
+        // }
     }
 
     render() {
@@ -79,11 +101,13 @@ class Search extends Component {
             placeholder: 'Type a programming language',
             value,
             onChange: this.onChange,
-            onKeyDown: this.onKeyDown
+            onKeyDown: this.onKeyDown,
+            onFocus: this.onFocus,
+            onBlur: this.onBlur
         };
         return (
             <div>
-                <div className="search">                   
+                <div className="search">
                     <Autosuggest
                         suggestions={suggestions}
                         onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
@@ -93,17 +117,20 @@ class Search extends Component {
                         inputProps={inputProps}
                     />
                     <img onClick={() => this.iconOnclick(value)} className="img-search-input" src={require("../../assets/img/search-2.svg")} alt="search" />
+                    <SearchList isFocus={this.state.isFocus} />
                 </div>
             </div>
         )
     }
 }
 const mapStateToProps = (state) => ({
-    data : state.glosarium.data,
-    labelSelected : state.glosarium.labelSelected
+    data: state.glosarium.data,
+    labelSelected: state.glosarium.labelSelected
 })
 
 const mapDispatchToProps = {
+    dataSelected,
+    searchList,
     searchData
 }
 

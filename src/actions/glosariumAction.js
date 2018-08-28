@@ -1,4 +1,4 @@
-import { GET_ALL_DATA, SET_LOADING, SET_LABEL, GET_DATA, GET_COLLECTION, DATA_SELECTED, SEARCH_INPUT } from "../config/type";
+import { GET_ALL_DATA, SET_LOADING, SET_LABEL, GET_DATA, GET_COLLECTION, DATA_SELECTED, SEARCH_INPUT, SEARCH_LIST } from "../config/type";
 import Axios from "axios";
 
 export const getAllData = () => dispatch => {
@@ -53,6 +53,15 @@ export const searchData = (search) => dispatch => {
     Axios.get(`http://localhost:7000/glosarium/all?search=${search}`).then(res =>
         dispatch({
             type: SEARCH_INPUT,
+            payload: res.data
+        })
+    )
+}
+
+export const searchList = (search) => dispatch => {
+    Axios.get(`http://localhost:7000/glosarium/all?search=${search}`).then(res =>
+        dispatch({
+            type: SEARCH_LIST,
             payload: res.data
         })
     )

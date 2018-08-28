@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import SideBar from './SideBar';
 import Search from './Search';
 import Content from './Content';
-import { isMobile } from 'react-device-detect';
+import { isMobile, isBrowser } from 'react-device-detect';
 
 export class Glosarium extends Component {
 
@@ -26,7 +26,7 @@ export class Glosarium extends Component {
                     </div>
                 </div>
             </div>
-        } else {
+        } else if(isBrowser) {
             return <div id="glosarium">
                 <div className="container container-padding">
                     <div className="row">
