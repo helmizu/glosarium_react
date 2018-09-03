@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { dataSelected } from '../../actions/glosariumAction'
 import { connect } from 'react-redux'
+import { baseUrl } from '../../config'
 
 export class Content extends Component {
     render() {
@@ -67,7 +68,7 @@ export class Content extends Component {
                                     <li>
                                         <div className="content">
                                             <h3 className="align-left">Ilustrasi</h3>
-                                            <img src={this.props.labelSelected.ilustrasi ? this.props.labelSelected.ilustrasi : require("../../assets/img/Rectangle 4.svg")} alt="" />
+                                            <img src={this.props.labelSelected.ilustrasi ? `${baseUrl}/images/${this.props.labelSelected.ilustrasi}` : require("../../assets/img/Rectangle 4.svg")} alt="" />
                                             <label>Gambar CSS 1.1 Ilustrasi Padding</label>
                                         </div>
                                     </li>

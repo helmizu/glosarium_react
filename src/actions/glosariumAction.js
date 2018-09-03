@@ -1,7 +1,7 @@
 import { GET_ALL_DATA, SET_LOADING, SET_LABEL, GET_DATA, GET_COLLECTION, DATA_SELECTED, SEARCH_INPUT, SEARCH_LIST } from "../config/type";
 import Axios from "axios";
+import { baseUrl } from '../config';
 
-const baseUrl = 'https://beta.arkademy.com/api/glosarium'
 export const getAllData = () => dispatch => {
     dispatch(setLoading())
     Axios.get(`${baseUrl}/glosarium/all`).then(res =>
