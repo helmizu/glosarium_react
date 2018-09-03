@@ -1,9 +1,10 @@
 import { GET_ALL_DATA, SET_LOADING, SET_LABEL, GET_DATA, GET_COLLECTION, DATA_SELECTED, SEARCH_INPUT, SEARCH_LIST } from "../config/type";
 import Axios from "axios";
 
+const baseUrl = 'https://beta.arkademy.com/api/glosarium'
 export const getAllData = () => dispatch => {
     dispatch(setLoading())
-    Axios.get(`http://localhost:7000/glosarium/all`).then(res =>
+    Axios.get(`${baseUrl}/all`).then(res =>
         dispatch({
             type: GET_ALL_DATA,
             payload: res.data
@@ -13,7 +14,7 @@ export const getAllData = () => dispatch => {
 
 export const getData = (label) => dispatch => {
     dispatch(setLoading())
-    Axios.get(`http://localhost:7000/glosarium?label=${label}`).then(res =>
+    Axios.get(`${baseUrl}?label=${label}`).then(res =>
         dispatch({
             type: GET_DATA,
             payload: res.data
@@ -22,7 +23,7 @@ export const getData = (label) => dispatch => {
 }
 
 export const getCollection = () => dispatch => {
-    Axios.get(`http://localhost:7000/glosarium/collection`)
+    Axios.get(`${baseUrl}/collection`)
     .then(res => 
         dispatch({
             type : GET_COLLECTION,
@@ -50,7 +51,7 @@ export const dataSelected = (data) => dispatch => {
 }
 
 export const searchData = (search) => dispatch => {
-    Axios.get(`http://localhost:7000/glosarium/all?search=${search}`).then(res =>
+    Axios.get(`${baseUrl}/all?search=${search}`).then(res =>
         dispatch({
             type: SEARCH_INPUT,
             payload: res.data
@@ -59,7 +60,7 @@ export const searchData = (search) => dispatch => {
 }
 
 export const searchList = (search) => dispatch => {
-    Axios.get(`http://localhost:7000/glosarium/all?search=${search}`).then(res =>
+    Axios.get(`${baseUrl}/all?search=${search}`).then(res =>
         dispatch({
             type: SEARCH_LIST,
             payload: res.data
