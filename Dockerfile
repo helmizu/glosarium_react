@@ -11,5 +11,6 @@ RUN ["npm", "run", "build"]
 # production environment
 FROM nginx:1.13.9-alpine
 COPY --from=builder /app/build /usr/share/nginx/html
-EXPOSE 80
+ARG PORT=83
+EXPOSE $PORT
 CMD ["nginx", "-g", "daemon off;"]
