@@ -3,6 +3,8 @@ import SideBar from './SideBar';
 import Search from './Search';
 import Content from './Content';
 import { isMobile, isBrowser } from 'react-device-detect';
+import { Route, Switch } from "react-router-dom";
+
 
 export class Glosarium extends Component {
 
@@ -18,15 +20,15 @@ export class Glosarium extends Component {
 
                         <div className="col-md-9 col-xs-12 col-sm-9 col-lg-9">
                             <div className="glosarium-wrapper">
-
-                                <Content />
-
+                                <Switch>
+                                    <Route path="/:label/:component" component={Content} />
+                                </Switch>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        } else if(isBrowser) {
+        } else if (isBrowser) {
             return <div id="glosarium">
                 <div className="container container-padding">
                     <div className="row">
@@ -38,7 +40,7 @@ export class Glosarium extends Component {
 
                                 <Search />
 
-                                <Content />
+                                <Route path="/:label/:component" component={Content} />
 
                             </div>
                         </div>

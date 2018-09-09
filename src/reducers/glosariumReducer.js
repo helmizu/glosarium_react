@@ -20,7 +20,7 @@ export default (state = initialState, action) => {
         case GET_DATA:
         return { 
             ...state,
-            data : action.payload,
+            labelSelected : action.payload,
             loading : false
             
         }

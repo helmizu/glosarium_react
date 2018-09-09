@@ -12,9 +12,9 @@ export const getAllData = () => dispatch => {
     )
 }
 
-export const getData = (label) => dispatch => {
+export const getData = (label, komponen) => dispatch => {
     dispatch(setLoading())
-    Axios.get(`${baseUrl}/glosarium?label=${label}`).then(res =>
+    Axios.get(`${baseUrl}/glosarium?label=${label}&&komponen=${komponen}`).then(res =>
         dispatch({
             type: GET_DATA,
             payload: res.data
