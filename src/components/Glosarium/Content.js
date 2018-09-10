@@ -1,9 +1,21 @@
 import React, { Component } from 'react'
-import { dataSelected } from '../../actions/glosariumAction'
+import { dataSelected, getData } from '../../actions/glosariumAction'
 import { connect } from 'react-redux'
 import { baseUrl } from '../../config'
+import {withRouter} from 'react-router-dom'
 
 export class Content extends Component {
+    componentDidMount = () => {
+        this.props.getData(this.props.match.params.label, this.props.match.params.component)
+    }
+    
+    componentDidUpdate = (prevProps, prevState) => {
+        if(prevProps.match.params !== this.props.match.params){
+            this.props.getData(this.props.match.params.label, this.props.match.params.component)
+      }
+    }
+    
+
     render() {
         return (
             <div>
@@ -99,12 +111,13 @@ export class Content extends Component {
 }
 
 const mapStateToProps = (state) => ({
-    labelSelected: state.glosarium.labelSelected
+    labelSelected: state.glosarium.labelSelected,
 })
 
 const mapDispatchToProps =
 {
-    dataSelected
+    dataSelected,
+    getData
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Content)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Content))

@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import { getData, getAllData, dataSelected } from '../../actions/glosariumAction'
+import {getAllData, dataSelected } from '../../actions/glosariumAction'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
+import {Link } from "react-router-dom";
 
 export class ChildSidebar extends Component {
 
@@ -17,7 +18,6 @@ export class ChildSidebar extends Component {
 
     static propTypes = {
         data: PropTypes.array.isRequired,
-        getData: PropTypes.func.isRequired,
         dataSelected : PropTypes.func.isRequired
     }
 
@@ -31,7 +31,7 @@ export class ChildSidebar extends Component {
                 {
                     this.props.data.map(dt => (
                         this.props.value === dt.label ?
-                        <li onClick={() => this.selectData(dt)} key={dt._id}>{dt.nama}</li>
+                        <li key={dt._id}><Link to={`/${dt.label}/${dt.nama}`}>{dt.nama}</Link></li>
                         : null
                     ))
                 }
@@ -46,7 +46,6 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps =
 {
-    getData,
     getAllData,
     dataSelected
 }

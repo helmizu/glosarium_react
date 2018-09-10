@@ -51,8 +51,7 @@ class Search extends Component {
     };
     
     onKeyDown = (e) => {
-        if (e.keyCode === 13) { // Enter
-            // Stop it here
+        if (e.keyCode === 13) { 
             e.preventDefault();
             e.stopPropagation();
             this.iconOnclick(this.state.value)
@@ -86,11 +85,6 @@ class Search extends Component {
     
     iconOnclick = (dataInput) => {
         this.props.searchData(dataInput)
-        // if(dataInput.length > 0){
-        //     this.props.searchList(dataInput)
-        // }else if(dataInput.length === 0){
-        //     this.props.searchList(false)
-        // }
     }
     
     componentDidUpdate = (prevProps, prevState) => {
