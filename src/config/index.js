@@ -1,1 +1,1 @@
-export const baseUrl = 'http://localhost:7000'
+export const baseUrl = 'https://beta.arkademy.com/glosarium'
